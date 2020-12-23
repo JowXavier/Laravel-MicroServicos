@@ -21,7 +21,6 @@ class ProductHandler implements KafkaConsumerHandlerInterface
                 'qtd_total' => $payload->qtd_total
             ]
         );
-        
 
         print_r($product->toJson());
     }
