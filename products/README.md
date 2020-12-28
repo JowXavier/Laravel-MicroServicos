@@ -34,14 +34,9 @@ Instala as dependências da aplicação.
 Cria a chave da aplicação.
 
 ```
-./bin/artisan migrate:fresh --seed
+./bin/artisan migrate
 ```
-Instala as migrações e seeders.
-
-```
-./bin/tests
-```
-Excuta os testes da aplicação
+Instala as migrações.
 
 ```
 ./bin/workspace

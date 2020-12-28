@@ -6,16 +6,15 @@ A pasta `./bin` possui diversos scripts utilitários, para configuração, execu
 
 Para configurar e acessar o projeto, execute:
 
-```
+### Executando containers
 
-### Executando o container
 ```
 ./bin/run
 ```
 Inicia o containers Docker.
 
-
 ### Consumindo Tópicos
+
 ```
 ./bin/kafka-consumer customers
 ```
