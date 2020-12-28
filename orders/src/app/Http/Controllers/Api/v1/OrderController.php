@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Api\v1;
 
-use App\Models\Customer;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CustomerResource;
+use App\Http\Resources\OrderResource;
 
-class CustomerController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Customer $model)
+    public function index(Order $model)
     {
-        return CustomerResource::collection($model->paginate());
+        return OrderResource::collection($model->paginate());
     }
 
     /**
@@ -26,9 +26,9 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Customer $model, Request $request)
+    public function store(Order $model, Request $request)
     {
-        return new CustomerResource($model->create($request->all()));
+        return new OrderResource($model->create($request->all()));
     }
 
     /**
@@ -37,9 +37,9 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Customer $model, $id)
+    public function show(Order $model, $id)
     {
-        return new CustomerResource($model->findOrFail($id));
+        return new OrderResource($model->findOrFail($id));
     }
 
     /**
@@ -49,11 +49,11 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Customer $model, Request $request, $id)
+    public function update(Order $model, Request $request, $id)
     {
-        $customer = $model->findOrFail($id);
-        $customer->update($request->all());
-        return new CustomerResource($customer);
+        $order = $model->findOrFail($id);
+        $order->update($request->all());
+        return new OrderResource($order);
     }
 
     /**
@@ -62,10 +62,10 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $model, $id)
+    public function destroy(Order $model, $id)
     {
-        $customer = $model->findOrFail($id);
-        $customer->delete();
-        return new CustomerResource($customer);
+        $order = $model->findOrFail($id);
+        $order->delete();
+        return new OrderResource($order);
     }
 }

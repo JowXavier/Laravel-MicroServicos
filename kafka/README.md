@@ -1,4 +1,4 @@
-# Serviço de produtos
+# Kafka
 
 Este projeto baseado em [Docker](https://www.docker.com/) e, por isso, é necessário o ter instalado para execução do ambiente.
 
